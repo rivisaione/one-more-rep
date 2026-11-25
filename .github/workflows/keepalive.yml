@@ -1,0 +1,35 @@
+# Free Supabase projects pause after 7 days without use. This pings the
+# database every 3 days (free GitHub Actions). The URL and publishable key are
+# the same public ones that are inside the app; no secret is here.
+name: Supabase keep-alive
+
+on:
+  schedule:
+    - cron: "17 3 */3 * *"   # 03:17 UTC every 3rd day
+  workflow_dispatch: {}
+
+permissions:
+  contents: write
+
+jobs:
+  ping:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Ping Supabase
+        run: |
+          code=$(curl -s -o /dev/null -w "%{http_code}" \
+            "https://vedatmdyowmcnfoncevm.supabase.co/rest/v1/app_releases?select=version&limit=1" \
+            -H "apikey: sb_publishable_cTEQUj391tkLB13a6-iksg_MzCJVhdY")
+          echo "Supabase answered $code"
+          test "$code" = "200"
+      # GitHub stops scheduled runs in repos with no commits for 60 days, so
+      # each run writes the date to a small file.
+      - uses: actions/checkout@v4
+      - name: Note the date
+        run: |
+          date -u +"%Y-%m-%d %H:%M UTC" > last-ping.txt
+          git config user.name "keep-alive"
+          git config user.email "keep-alive@users.noreply.github.com"
+          git add last-ping.txt
+          git commit -m "Keep-alive ping" || true
+          git push

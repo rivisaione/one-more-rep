@@ -1,0 +1,93 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>One More Rep – Privacy policy</title>
+<style>
+  :root { --bg:#f5f6f8; --card:#fff; --text:#14171c; --muted:#5d6672; --accent:#9e1b3b; --line:#e3e6ea; }
+  @media (prefers-color-scheme: dark) {
+    :root { --bg:#0d0f12; --card:#161a20; --text:#f2f4f7; --muted:#a3abb7; --accent:#e0526f; --line:#232831; }
+  }
+  body { margin:0; background:var(--bg); color:var(--text); font:16px/1.6 -apple-system, BlinkMacSystemFont, "Segoe UI", Inter, Roboto, sans-serif; }
+  main { max-width:720px; margin:0 auto; padding:32px 20px 64px; }
+  h1 { font-size:30px; margin:0 0 4px; }
+  h2 { font-size:19px; margin:32px 0 8px; color:var(--accent); }
+  p, li { color:var(--text); }
+  .muted { color:var(--muted); font-size:14px; }
+  .card { background:var(--card); border:1px solid var(--line); border-radius:16px; padding:4px 20px; margin-top:20px; }
+  ul { padding-left:20px; }
+  a { color:var(--accent); }
+</style>
+</head>
+<body>
+<main>
+  <h1>One More Rep – Privacy policy</h1>
+  <p class="muted">Last updated: 25 November 2026. Applies to the One More Rep app (iPhone and Android).</p>
+
+  <div class="card">
+    <p><strong>In short:</strong> One More Rep is a personal gym tracker for adults (18 and over). Your workouts stay on
+    your phone and in your own account. What you send to the AI (InBody reports, food photos, Buddy chats, and your
+    details when a plan is made) goes to Google Gemini's free service, where Google may use it and people at Google may
+    read it. We never sell your data. You can delete everything at any time.</p>
+  </div>
+
+  <h2>1. Who we are</h2>
+  <p>One More Rep is a small, private app made for a few friends. It is not sold in app stores and shows no ads.
+  Contact: <strong>[contact email to be added]</strong>.</p>
+
+  <h2>2. What we collect</h2>
+  <ul>
+    <li><strong>Account:</strong> your email address (or your Google account email if you sign in with Google), and a password if you choose email sign-in.</li>
+    <li><strong>About you:</strong> name, phone number, date of birth, sex, height, weight, goal, experience, training days, place and equipment, pain or injury areas, diet type, daily activity, food style, foods you avoid, and any note you write.</li>
+    <li><strong>Training:</strong> workouts, sets, weights, reps, records, weekly plans and pain check-ins.</li>
+    <li><strong>Body and food:</strong> body scan values (for example from InBody), food logs and meal plans.</li>
+    <li><strong>Photos:</strong> finish photos stay on your phone. If you share a workout to the feed, its photo is uploaded.</li>
+    <li><strong>Feed:</strong> username, shown name, bio, profile photo, posts, likes, comments and who follows whom.</li>
+    <li><strong>PIN:</strong> stored on your phone only, as a salted hash. It never leaves the phone.</li>
+  </ul>
+
+  <h2>3. Where it is kept: Supabase</h2>
+  <p>Your account and synced data are kept by <a href="https://supabase.com/privacy">Supabase</a> (free plan), our
+  database and sign-in provider. Database rules (Row Level Security) let each person read only their own rows.
+  Feed posts, likes, comments and post photos are seen only by the author and the followers they accept.
+  The app also keeps a copy on your phone, so it works offline.</p>
+
+  <h2>4. The AI: Google Gemini (free service)</h2>
+  <p>The app sends data to <a href="https://ai.google.dev/gemini-api/terms">Google Gemini</a> only when you use an AI
+  feature, through our server (Supabase Edge Functions):</p>
+  <ul>
+    <li><strong>InBody reports</strong> (PDF, photo or screenshot) to read the values.</li>
+    <li><strong>Food photos</strong> to estimate calories and protein.</li>
+    <li><strong>Buddy chats</strong>: your questions, and, if you leave sharing on, your About you answers and last 4 weeks of workouts.</li>
+    <li><strong>Weekly workout plans, meal plans and scan summaries</strong>: your About you answers, recent workouts, latest scan values and pain areas.</li>
+  </ul>
+  <p><strong>Please note:</strong> on Gemini's free service, Google may use what is sent to improve its products,
+  and human reviewers at Google may read it. Do not send anything you want to keep private. We send no name or email
+  with AI requests, but reports and photos can contain personal details.</p>
+
+  <h2>5. Crash reports: Sentry</h2>
+  <p>If the app crashes or hits a serious error, a report goes to <a href="https://sentry.io/privacy/">Sentry</a>
+  (free plan): the app version, phone model, iOS or Android version, the screen, and the error. Reports never contain
+  your body data, scans, photos, chats, name or email. There are no analytics and no ads.</p>
+
+  <h2>6. Notifications</h2>
+  <p>Rest-timer, workout and body-scan reminders are made on your phone. No data is sent for them.</p>
+
+  <h2>7. Who else sees your data</h2>
+  <p>Only the services above (Supabase, Google Gemini, Sentry), and only for the reasons above. We never sell your
+  data or share it for advertising.</p>
+
+  <h2>8. Age</h2>
+  <p>One More Rep is only for people 18 and over. The app asks for your date of birth and does not open for anyone younger.</p>
+
+  <h2>9. Delete everything</h2>
+  <p>In the app: <strong>Settings &gt; Delete all my data</strong>. This deletes everything on your phone and
+  everything in your account (workouts, plans, scans, feed posts, likes, comments, followers and the account itself).
+  It cannot be undone. Data already sent to Google Gemini is handled under Google's terms.</p>
+
+  <h2>10. Changes</h2>
+  <p>If this policy changes in an important way, the app shows the new text and asks you to accept it again.</p>
+</main>
+</body>
+</html>
